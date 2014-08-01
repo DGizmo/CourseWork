@@ -1,0 +1,10 @@
+div.h-title Gizmo.fm приветствует вас в своей музыкальной галлереи. 
+ br
+ На данный момент в вашем распоряженин {{posts.length}} групп
+div.h-index_artist_gallery
+ div(ng-repeat='post in posts | filter:query' class="h-index_artist" style="background: url(/pic/artist/{{post.pic}}) no-repeat")
+  a(href='/deleteband/{{post.title}}' class='h-delete') [X]
+  div.h-index_block
+   div.l-index_block
+    h3
+     a.h-index_artist_title( href='/band/{{post.title}}' )  {{post.title}}

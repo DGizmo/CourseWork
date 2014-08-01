@@ -1,0 +1,35 @@
+div.h-album-page
+ img.h-album_avatar(src='/pic/artist/{{info.artist_art}}') 
+ div.h-a_pos
+  a.l-a_blue(href='/band/{{info.artist}}') {{info.artist}}
+  a.l-a_right(href='/editalbum/{{info.artist}}/{{info.album}} ') Редактировать
+  a.l-a_right2(href='/avataralbum/{{info.album}} ') Изменить обложку
+ br
+ div
+  img.h-album_art(src='/pic/album/{{info.album_art}}')
+  div.h-album_content
+   div.h-album_title Название
+   div.h-album_info.h-album_name {{info.album}} 
+   div.h-album_title Год релиза
+   div.h-album_info {{info.relise}}
+   div.h-album_title Количество композиций
+   div.h-album_info {{info.track_sum}}
+   div.h-album_title Продолжительность
+   div.h-album_info {{info.count}}
+   div.h-album_genre
+    span.h-album_tag(ng-repeat='mus in bio.genre') {{mus}}
+ br
+ div.h-album_tracklist
+  table.h-album_table
+   tr
+    td 
+    td.metaCell Композиция
+    td.metaCell Продолжительность
+    
+   tr(ng-repeat='track in bio.bio')
+    td.firstCell {{track.num}}
+    td.secondCell {{track.name}}
+    td.thirdCell {{track.time}}
+ div 
+  button.h-album_delete( ng-click='deleteAlbum()') Удалить альбом
+  

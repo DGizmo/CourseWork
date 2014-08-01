@@ -1,0 +1,7 @@
+h2 {{post}}
+p
+ form.h-artist_ava(enctype="multipart/form-data" action='/api/avatar/{{post}}' method='post')
+  label(for='foto') Фото исполнителя: 
+  input(name='foto' type='file'  multiple accept='image/png')
+  br
+  input(type="submit" ng-click="submitPost()")

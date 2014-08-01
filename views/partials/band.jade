@@ -1,0 +1,25 @@
+section
+  div.h-index_artist_gallery
+   div.h-red
+    a.h-artist_red(href='/editband/{{post.artist[0].artist}}') Редактировать
+    br
+    a.h-artist_red(href='/avatar/{{post.artist[0].artist}}') Изменить фото
+    //form.h-artist_ava(enctype="multipart/form-data" action='/api/post' method='post')
+     //label(for='foto') Фото исполнителя: 
+     //input(name='foto' type='file'  multiple accept='image/png')
+   img.h-artist_art(src='/pic/artist/{{post.artist[0].artist_art}}')
+   div.h-artist_portf
+    p Группа:  
+     span.h-bio {{post.artist[0].artist}}
+    p Страна: 
+     span.h-bio {{post.artist[0].country}}
+    p Начало деятельности: 
+     span.h-bio {{post.artist[0].rise}}
+    p Альбомы: 
+    div.h-bio-gallery.h-bio_float 
+     div.h-bio_album(ng-repeat='alb in post.album' )
+      img.h-bio_img( src='/pic/album/{{alb.album_art}}' )
+      div.h-bio_album_name 
+       a(href='/band/{{post.artist[0].artist}}/{{alb.album_name}}') {{alb.album_name}}
+     br
+     a.h-band_album(href='/addalbum/{{post.artist[0].artist}}') Add a new Album

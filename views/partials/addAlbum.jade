@@ -1,0 +1,47 @@
+div.h-add_main
+ h2 Добавление альбома шаг 1
+ label(for='album_name') Название альбома: 
+ input(ng-model='tracks.album_name', name='album_name')
+ br
+ label(for='relise') Год выпуска: 
+ input(ng-model='tracks.relise', name='relise')
+ div.h-add_t
+  h3
+   Треклист
+  table.h-add_table()
+   tr
+    td.
+     Название трека
+    td.
+     Минуты
+    td.
+     Секунды
+    td 
+     input.h-add_delete(ng-click="deleteTrack()" type="submit" value="удалить отмеченные") 
+   tr(ng-repeat="track in tracks")
+    //Название: 
+    td(name='tracks[]'  class="done-{{track.done}}" ) {{track.name}} 
+    //Минуты: 
+    td(name='minutes[]' ) {{track.min}}
+    //Секунды: 
+    td(name='seconds[]' ) {{track.sec}}
+    td
+     input(type="checkbox" ng-model="track.done")
+  form.h-add_form(ng-submit="addTrack()")
+   input(type="text" ng-model="tName" size="30" placeholder="трек")
+   input(type="text" ng-model="tMin"  maxlength="3" placeholder="минуты")
+   input(type="text" ng-model="tSec"  maxlength="2" placeholder="секунды")
+   br
+   input(type="submit" value="добавить")
+   br
+  //Жанр альбома:
+  //ul
+   //li(ng-repeat="genre in genre")
+    //span(name='genre[]'  class="done-{{genre.done}}" ) {{genre.name}} 
+    //input(type="checkbox" ng-model="genre.done")
+  //form(ng-submit="addGenre()")
+   //input(type="text" ng-model="aGenre" size="20" placeholder="впишите название жанра")
+   //br
+   //input(type="submit" value="добавить")
+ p
+  button.h-add_send(ng-click='submitAlbum()') Отправить

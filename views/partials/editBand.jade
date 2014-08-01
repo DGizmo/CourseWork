@@ -1,0 +1,12 @@
+h2 Редактирование исполнителя
+label(for='artist') Имя исполнителя: 
+input(ng-model='form.artist', name='artist' )
+br
+label(for='rise') Начало деятельности: 
+input(ng-model='form.rise', name='rise')
+br
+label(for='country') Страна: 
+input(ng-model='form.country', name='country')
+br
+p
+ button(ng-click='editBand()') Изменить

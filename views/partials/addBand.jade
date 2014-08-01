@@ -1,0 +1,15 @@
+h2 Добавить исполнителя
+form(enctype="multipart/form-data" action='/api/post' method='post')
+ label(for='artist') Имя исполнителя: 
+ input(ng-model='form.artist', name='artist')
+ br
+ label(for='rise') Начало деятельности: 
+ input(ng-model='form.rise', name='rise')
+ br
+ label(for='country') Страна: 
+ input(ng-model='form.country', name='country')
+ br
+ label(for='foto') Фото исполнителя: 
+ input(name='foto' type='file'  multiple accept='image/png')
+ p
+  button(ng-click='submitPost()') Submit
